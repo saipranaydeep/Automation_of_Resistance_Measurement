@@ -21,7 +21,7 @@ change in temperature.
 
 - Then, run the file titled 
 
-  `newInterfaceAndBackend.py`
+  `resistancePlotter.py`
 
 ## Setting Up and Performing the Experiment
 - First, check if the connections are proper or not.
@@ -86,3 +86,4 @@ change in temperature.
     - Increase current by: value by which current will be increased from start to stop current.
     - Delay of current source: delay after which current source will start supplying current to the sample.
   - If both the modes are selected, give the inputs accordingly as stated above.
+Working repository : https://github.com/Aditi202004/Software-Project/
