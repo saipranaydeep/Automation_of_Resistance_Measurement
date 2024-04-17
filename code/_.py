@@ -1221,9 +1221,9 @@ def SEND_EMAIL_TO(email):
         Yours System.
         """
         try:
-            server.login('saipranaydeepjonnalagadda2888@gmail.com', 'nrtjwumgsagpsmrc') # If your password doesn't work. Create an app password and then try that
+            server.login('email@gmail.com', 'password') # If your password doesn't work. Create an app password and then try that
 
-            server.sendmail('saipranaydeepjonnalagadda2888@gmail.com', email, message)
+            server.sendmail('email@gmail.com', email, message)
         except:
             print("Mail not sent because of bad credentials...")
     except:
