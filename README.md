@@ -85,5 +85,5 @@ change in temperature.
     - Stop current: maximum value of current that will be passed.
     - Increase current by: value by which current will be increased from start to stop current.
     - Delay of current source: delay after which current source will start supplying current to the sample.
-  - If both the modes are selected, give the inputs accordingly as stated above.
+  - If both the modes are selected, give the inputs accordingly as stated above.<br><br>
 Working repository : https://github.com/Aditi202004/Software-Project/
