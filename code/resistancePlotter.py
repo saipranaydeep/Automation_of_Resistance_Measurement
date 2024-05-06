@@ -1043,8 +1043,10 @@ def DISPLAY_SELECTING_EXPERIMENTS_WIDGET():
             INTERFACE.attributes('-alpha', 1)
 
         elif TEMPERATURE_EXPERIMENT.get() and TIME_EXPERIMENT.get():
-            CURRENT_SOURCE_TEMPERATURE_INPUTS_FRAME.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
-            CURRENT_SOURCE_TIME_INPUTS_FRAME.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
+            CURRENT_SOURCE_TEMPERATURE_TITLE_FRAME.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+            CURRENT_SOURCE_TEMPERATURE_INPUTS_FRAME.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
+            CURRENT_SOURCE_TIME_TITLE_FRAME.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")
+            CURRENT_SOURCE_TIME_INPUTS_FRAME.grid(row=3, column=0, padx=10, pady=10, sticky="nsew")
             SET_GRAPH_IN_TAB(GRAPH_TAB)
             DISPLAY_TEMPERATURE_INPUTS()
             SELECTING_EXP_WIDGET.destroy()
@@ -1480,9 +1482,16 @@ if __name__=="__main__":
         SEND_EMAIL_CHECKBUTTON.grid(row=0,column=2,columnspan=5, sticky="w")
 
  
-    CURRENT_SOURCE_TAB.rowconfigure(0, weight=2)
-    CURRENT_SOURCE_TAB.rowconfigure(1, weight=3)
+    CURRENT_SOURCE_TAB.rowconfigure(0, weight=0)
+    CURRENT_SOURCE_TAB.rowconfigure(1, weight=2)
+    CURRENT_SOURCE_TAB.rowconfigure(2, weight=0)
+    CURRENT_SOURCE_TAB.rowconfigure(3, weight=3)
     CURRENT_SOURCE_TAB.columnconfigure((0), weight=1, uniform='a')
+    CURRENT_SOURCE_TEMPERATURE_TITLE_FRAME = ctk.CTkFrame(CURRENT_SOURCE_TAB,fg_color=("#5cb0f2", "#4A4A4A"))
+    title_font = ctk.CTkFont(size=17,family='Kalam',weight='bold')
+    
+    TITLE_LABEL = ctk.CTkLabel(CURRENT_SOURCE_TEMPERATURE_TITLE_FRAME, text="Resistance vs Temperature Controls", text_color=("black", "white"),font=title_font)
+    TITLE_LABEL.grid(row=0, column=0, sticky="wens", padx=160, pady=20)  # Adjust padx and pady as needed
 
     CURRENT_SOURCE_TEMPERATURE_INPUTS_FRAME = ctk.CTkFrame(CURRENT_SOURCE_TAB, fg_color=("#b8dfff", "#4A4A4A"))
     CURRENT_SOURCE_TEMPERATURE_INPUTS_FRAME.rowconfigure((0,1), weight=1)
@@ -1511,6 +1520,9 @@ if __name__=="__main__":
     CURRENT_SOURCE_TIME_INPUTS_FRAME = ctk.CTkFrame(CURRENT_SOURCE_TAB, fg_color=("#b8dfff", "#4A4A4A"))
     CURRENT_SOURCE_TIME_INPUTS_FRAME.rowconfigure((0,1,2,3), weight=1)
     CURRENT_SOURCE_TIME_INPUTS_FRAME.columnconfigure((0,1,2,3,4,5), weight=1)
+    CURRENT_SOURCE_TIME_TITLE_FRAME = ctk.CTkFrame(CURRENT_SOURCE_TAB, fg_color=("#5cb0f2", "#4A4A4A"))
+    TIME_TITLE_LABEL = ctk.CTkLabel(CURRENT_SOURCE_TIME_TITLE_FRAME, text="Resistance vs Time Controls", text_color=("black", "white"),font=title_font)
+    TIME_TITLE_LABEL.grid(padx=160, pady=20,column=0, row=0, sticky="wens")
 
     SELECTED_TEMPERATURES_LABEL = ctk.CTkLabel(CURRENT_SOURCE_TIME_INPUTS_FRAME, text="Required\nTemperatures", text_color=("black", "white"),font=text_font)
     MEASURING_TIME_LABEL = ctk.CTkLabel(CURRENT_SOURCE_TIME_INPUTS_FRAME, text="Total Time", text_color=("black", "white"),font=text_font)
