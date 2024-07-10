@@ -88,5 +88,3 @@ change in temperature.
   - If both the modes are selected, give the inputs accordingly as stated above.<br><br>
 Working repository : https://github.com/Aditi202004/Software-Project/
 
-## Team Members
--Sai Pranay Deep
